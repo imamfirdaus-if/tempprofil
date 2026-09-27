@@ -17,7 +17,7 @@ class PageForm
     {
         return $schema
             ->components([
-                Section::make('Halaman')
+                Section::make('Pengaturan Halaman')
                     ->schema([
                         TextInput::make('title')->label('Judul')->required()->maxLength(255),
                         TextInput::make('slug')->label('Slug')->required()->unique(ignoreRecord: true)->maxLength(255),
@@ -38,6 +38,7 @@ class PageForm
                     ->schema([
                         RichEditor::make('content')
                             ->label('Isi halaman')
+                            ->extraInputAttributes(['style' => 'min-height: 32rem;'])
                             ->toolbarButtons([
                                 ['bold', 'italic', 'underline', 'strike', 'link'],
                                 ['h2', 'h3'],
