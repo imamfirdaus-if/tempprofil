@@ -1,0 +1,246 @@
+/* Header, Beranda, and footer customization for the university profile site. */
+.top-line-inner {
+    gap: 20px;
+}
+
+.top-line-inner > span {
+    white-space: nowrap;
+}
+
+.top-links {
+    align-items: center;
+    gap: clamp(9px, 1.6vw, 20px);
+}
+
+.top-links a {
+    white-space: nowrap;
+}
+
+.brand > img {
+    width: 54px;
+    height: 70px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+
+.hero {
+    min-height: 570px;
+    background: linear-gradient(112deg, var(--hero-gradient-start) 0%, var(--hero-gradient-middle) 57%, var(--hero-gradient-end) 100%);
+}
+
+.hero-image {
+    opacity: .48;
+    mix-blend-mode: normal;
+    filter: saturate(.82);
+}
+
+.hero:after {
+    background: linear-gradient(108deg, rgba(3, 45, 40, .86) 0%, rgba(5, 59, 72, .63) 55%, rgba(244, 251, 248, .2) 100%);
+}
+
+.hero-inner {
+    min-height: 570px;
+    justify-content: flex-start;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    max-width: 800px;
+}
+
+.accreditation-strip {
+    background: #f1f6f2;
+}
+
+.accreditation-inner {
+    min-height: 230px;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    grid-template-columns: .55fr 1.25fr 2fr;
+    gap: 34px;
+}
+
+.accreditation-certificate {
+    margin: 0;
+    min-width: 0;
+}
+
+.accreditation-certificate img {
+    width: 100%;
+    max-height: 205px;
+    object-fit: contain;
+    background: transparent;
+    border: 0;
+}
+
+.accreditation-copy {
+    display: block;
+}
+
+.accreditation-copy h2 {
+    margin: 0 0 10px;
+    color: #12302f;
+    font: 800 clamp(21px, 2.5vw, 29px)/1.15 var(--display);
+    letter-spacing: -.045em;
+}
+
+.accreditation-copy p {
+    margin: 0;
+    color: #526966;
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.announcement-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: linear-gradient(112deg, var(--announcement-gradient-start) 0%, var(--announcement-gradient-middle) 58%, var(--announcement-gradient-end) 100%);
+}
+
+.announcement-background,
+.announcement-section:before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.announcement-background {
+    z-index: 0;
+    background-size: cover;
+    background-position: center 48%;
+    opacity: .28;
+    mix-blend-mode: soft-light;
+}
+
+.announcement-section:before {
+    content: '';
+    z-index: 1;
+    background: linear-gradient(105deg, rgba(4, 47, 43, .5), rgba(4, 47, 55, .37) 58%, rgba(4, 47, 43, .2));
+}
+
+.announcement-section > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.announcement-section .section-heading .text-link {
+    color: #12302f;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, .6);
+}
+
+.site-footer {
+    background: var(--footer-background, var(--teal-dark));
+    color: var(--footer-text-color, #dce7df);
+}
+
+.site-footer .footer-brand-logo {
+    width: 88px;
+    height: 118px;
+    padding: 4px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 3px;
+}
+
+.site-footer .footer-brand p,
+.site-footer .footer-grid a,
+.site-footer .footer-contact p,
+.site-footer .footer-bottom,
+.site-footer .footer-label {
+    color: var(--footer-text-color, #dce7df) !important;
+}
+
+.site-footer .footer-grid a:hover {
+    opacity: .78;
+}
+
+@media (max-width: 1000px) {
+    .accreditation-inner {
+        grid-template-columns: 1fr 1.3fr;
+        gap: 24px;
+    }
+
+    .accreditation-inner > .section-kicker {
+        grid-column: 1 / -1;
+    }
+
+    .accreditation-certificate {
+        grid-column: 1;
+    }
+
+    .accreditation-copy {
+        grid-column: 2;
+    }
+
+    .topline {
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 720px) {
+    .topline {
+        display: block;
+        font-size: 9px;
+    }
+
+    .top-line-inner {
+        width: calc(100% - 36px);
+        height: auto;
+        min-height: 58px;
+        padding: 8px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .top-line-inner > span {
+        white-space: normal;
+    }
+
+    .top-links {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 4px 12px;
+    }
+
+    .brand > img {
+        width: 45px;
+        height: 62px;
+    }
+
+    .hero,
+    .hero-inner {
+        min-height: 520px;
+    }
+
+    .hero:after {
+        background: linear-gradient(100deg, rgba(3, 45, 40, .88), rgba(5, 59, 72, .64) 72%, rgba(244, 251, 248, .24));
+    }
+
+    .accreditation-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 38px 0;
+        gap: 20px;
+    }
+
+    .accreditation-inner > .section-kicker,
+    .accreditation-certificate,
+    .accreditation-copy {
+        grid-column: 1;
+    }
+
+    .accreditation-certificate img {
+        max-height: 230px;
+    }
+
+    .site-footer .footer-brand-logo {
+        width: 72px;
+        height: 100px;
+    }
+}
